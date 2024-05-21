@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        {% for dia in dias %}
+            <div style="background-color: white; padding: 20px; margin-bottom: 20px;">
+                <h2>Data: {{ dia.data }}</h2>
+                <h3>Topicos: {{ dia.topicos }}</h3>
+                <p>Descrição: {{ dia.descricao }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
