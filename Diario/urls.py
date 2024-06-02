@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Dias.views import display_dias, form_dias
+from Dias.views import display_dias, DiasCreateView, DiasDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dias/', display_dias, name='dias_view'),
-    path('novo_dia/', form_dias, name='novo_dia')
+    path('novo_dia/', DiasCreateView.as_view(), name='novo_dia'),
+    path('delete_dia/<int:pk>/', DiasDeleteView.as_view(), name='delete_dia'),
 ]

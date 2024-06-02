@@ -7,6 +7,11 @@
                 <h2>Data: {{ dia.data }}</h2>
                 <h3>Topicos: {{ dia.topicos }}</h3>
                 <p>Descrição: {{ dia.descricao }}</p>
+                
+                <form action="{% url 'delete_dia' dia.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Deletar</button>
+                </form>
             </div>
         {% endfor %}
     </div>
